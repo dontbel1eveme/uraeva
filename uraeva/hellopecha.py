@@ -1,1 +1,0 @@
-print("Pi4yga zdarova Z Z Z Z Z Z !!!!!")
