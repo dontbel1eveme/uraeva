@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поле Чудес</title>
+    <link rel="stylesheet" href="laba№3.css">
+</head>
+<body class="dark-theme">
+    <!-- Главное меню -->
+    <div id="main-menu" class="page visible">
+        <div class="user-info">
+            <span>Текущий пользователь:</span>
+            <span id="current-user">Гость</span>
+        </div>
+        
+        <div class="menu-buttons">
+            <button onclick="showPage('game')">Начать игру</button>
+            <button onclick="showPage('login')">Авторизация</button>
+            <button onclick="showPage('tutorial')">Обучение</button>
+            <button onclick="showPage('settings')">Настройки</button>
+            <button onclick="showPage('leaderboard')">Таблица лидеров</button>
+        </div>
+    </div>
+
+    <!-- Окно авторизации -->
+    <div id="login" class="page">
+        <h2>Авторизация</h2>
+        <button class="back-btn" onclick="showPage('main-menu')">Назад</button>
+        <div class="form-group">
+            <label>Логин:</label>
+            <input type="text" id="login-input">
+        </div>
+        <div class="form-group">
+            <label>Пароль:</label>
+            <input type="password" id="password-input">
+        </div>
+        <button onclick="showPage('main-menu')">Войти</button>
+        <button onclick="showPage('main-menu')">Создать аккаунт</button>
+    </div>
+
+    <!-- Игровой интерфейс -->
+    <div id="game" class="page">
+        <button class="back-btn" onclick="showPage('main-menu')">Назад</button>
+        <div class="game-header">
+            <span>Игрок: <span id="game-username">Гость</span></span>
+            <span>Барабан: <span id="drum-value">0</span></span>
+            <span>Очки: <span id="score">0</span></span>
+        </div>
+
+        <div class="game-main">
+            <div class="drum-container">
+                <img src="drum.png" alt="Барабан" class="drum-image">
+            </div>
+            <div class="word-display">_ _ _ _ _ _ _ _ _ _</div>
+            <div class="used-letters">Использованные буквы: </div>
+            <div class="attempts">Попытки: 3</div>
+        </div>
+
+        <div class="game-controls">
+            <button>Вращать барабан</button>
+            <button disabled>Назвать букву</button>
+            <button disabled>Назвать слово</button>
+            <button disabled>Подсказка (500)</button>
+            <button>Сдаться</button>
+        </div>
+    </div>
+
+    <!-- Таблица лидеров -->
+    <div id="leaderboard" class="page">
+        <h2>Таблица лидеров</h2>
+        <button class="back-btn" onclick="showPage('main-menu')">Назад</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Игрок</th>
+                    <th>Рекорд</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Иван</td><td>1500</td></tr>
+                <tr><td>Мария</td><td>1200</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Настройки -->
+    <div id="settings" class="page">
+        <h2>Настройки</h2>
+        <div class="setting-group">
+            <label>Звук:</label>
+            <input type="checkbox" checked>
+        </div>
+        <div class="theme-settings">
+            <span>Тема:</span>
+            <label><input type="radio" name="theme" checked> Светлая</label>
+            <label><input type="radio" name="theme"> Темная</label>
+        </div>
+        <button onclick="showPage('main-menu')">Сохранить</button>
+    </div>
+
+    <!-- Обучение -->
+    <div id="tutorial" class="page">
+        <h2>Правила игры</h2>
+        <button class="back-btn" onclick="showPage('main-menu')">Назад</button>
+        <div class="rules">
+            <p>1. Вращайте барабан для получения очков</p>
+            <p>2. Угадывайте буквы в слове</p>
+            <p>3. У вас есть 3 попытки на ошибки</p>
+            <p>4. Можно назвать слово целиком</p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('visible');
+            });
+            document.getElementById(pageId).classList.add('visible');
+        }
+    </script>
+</body>
+</html>

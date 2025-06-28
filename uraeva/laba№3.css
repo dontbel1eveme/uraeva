@@ -1,0 +1,197 @@
+/* styles.css */
+:root {
+    --dark-bg: #2d2d2d;
+    --dark-text: #ffffff;
+    --light-bg: #ffffff;
+    --light-text: #000000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.page {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.page.visible {
+    display: block;
+}
+
+/* Темная тема */
+.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-theme .page {
+    background-color: #3d3d3d;
+    border: 1px solid #555;
+}
+
+.dark-theme button {
+    background-color: #4d4d4d;
+    color: white;
+    border: 1px solid #666;
+    padding: 8px 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Светлая тема */
+.light-theme {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+.light-theme .page {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.light-theme button {
+    background-color: #e0e0e0;
+    color: black;
+    border: 1px solid #999;
+}
+
+/* Общие элементы */
+.user-info {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    transition: all 0.3s;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Игровой интерфейс */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.word-display {
+    font-size: 24px;
+    letter-spacing: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.used-letters {
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.game-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Таблица лидеров */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid;
+}
+
+/* Настройки */
+.setting-group {
+    margin: 15px 0;
+}
+
+.theme-settings {
+    margin: 20px 0;
+}
+
+/* Обучение */
+.rules {
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.back-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 8px 20px;
+    background-color: #666 !important;
+    border-radius: 5px;
+}
+
+/* Для темной темы */
+.dark-theme .back-btn {
+    background-color: #444 !important;
+    color: white;
+}
+
+/* Для светлой темы */
+.light-theme .back-btn {
+    background-color: #ddd !important;
+    color: black;
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 600px) {
+    .back-btn {
+        top: 10px;
+        left: 10px;
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Дополнительные стили при необходимости */
+#tutorial .back-btn {
+    top: 20px;  /* Пример кастомизации */
+    left: 20px;
+}
+
+/* Контейнер для изображения барабана */
+.drum-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Стили для изображения барабана */
+.drum-image {
+    width: 200px; /* Размер изображения */
+    height: 200px;
+    object-fit: contain; /* Сохраняет пропорции изображения */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+    .drum-image {
+        width: 150px;
+        height: 150px;
+    }
+}
